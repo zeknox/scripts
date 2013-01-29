@@ -1,0 +1,12 @@
+From: #{display_from} <#{from}>
+To: #{to}
+MIME-Version: 1.0
+Content-Type: text/html
+Subject: #{subject}
+
+This is a test email
+<br>
+From,
+<br>
+The Phisher
+
