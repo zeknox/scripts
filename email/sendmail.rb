@@ -25,8 +25,8 @@ def sendemail(username, password, from, message, email, port, smtpout, smtp)
 			smtp.send_message message, "#{from}", email.chomp
 		end
 		puts "\tSent to: #{email}"
-	rescue
-		puts "\tIssues Sending to: #{email}"
+	rescue => e
+		puts "\tIssues Sending to: #{email}\r\n#{e.class}\r\n#{e}"
 	end
 end
 
