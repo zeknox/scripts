@@ -26,9 +26,17 @@ end
 
 # send dns_request
 def ssh_enumeration(ip)
-  puts "[*] Enumerating SSH algorithms against #{ip}"
-  nmap_output = `nmap -p 22 -sV #{ip} --script=ssh2-enum-algos`
-  parse_ssh_algos(nmap_output, ip)
+  begin
+    puts "[*] Enumerating SSH algorithms against #{ip}"
+    nmap_output = `nmap -p 22 -sV #{ip} --script=ssh2-enum-algos`
+    parse_ssh_algos(nmap_output, ip)
+  rescue SystemExit, Interrupt
+    puts "\n\rExiting..."
+    exit!
+  rescue Exception => e
+    puts "[-] Error #{ip} - #{e}"
+    return
+  end
 end
 
 # greet user
