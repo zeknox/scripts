@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+H#!/usr/bin/env ruby
 # This script takes a .txt file as an argument. It will iterate through each emailaddress
 # in the file and send an email to each target
 # Authors: zeknox & R3dy
